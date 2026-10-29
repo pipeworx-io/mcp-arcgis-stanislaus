@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-arcgis-stanislaus",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Stanislaus County GIS — Stanislaus County, California open geospatial data (ArcGIS).",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-arcgis-stanislaus": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "arcgis-stanislaus"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-arcgis-stanislaus.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/arcgis-stanislaus",
   "pipeworx": {
-    "sourceHash": "v1-bdf01fa84f74d3446ce7ff34c8e2ab86456daf571336d5df6beb08e389b37cb7",
-    "sourceCommit": "93c7d52ace03a2bb9aee5e6024f6858adab0dd04"
+    "mode": "gateway",
+    "slug": "arcgis-stanislaus",
+    "gatewaySlug": "arcgis-stanislaus",
+    "sourceHash": "v1-d082447002e0549d8db17070563a51510343cea45826e00c6bf5117f276a954d",
+    "sourceCommit": "c6136b81713e72ccb22977ca0c0cd981f8c3f081"
   }
 }
